@@ -9,6 +9,7 @@ import uk.ac.ebi.ddi.api.readers.bioprojects.ws.client.GeoClient;
 import uk.ac.ebi.ddi.api.readers.bioprojects.ws.model.BioprojectDataset;
 import uk.ac.ebi.ddi.api.readers.utils.Constants;
 import uk.ac.ebi.ddi.api.readers.utils.Transformers;
+import uk.ac.ebi.ddi.ddifileservice.services.IFileSystem;
 import uk.ac.ebi.ddi.ddifileservice.type.ConvertibleOutputStream;
 import uk.ac.ebi.ddi.service.db.repo.dataset.IDatasetRepo;
 import uk.ac.ebi.ddi.service.db.service.dataset.DatasetService;
@@ -17,6 +18,7 @@ import uk.ac.ebi.ddi.xml.validator.parser.marshaller.OmicsDataMarshaller;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Database;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Entry;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -107,6 +109,7 @@ public class DdiBioProjectGenService {
             mm.marshall(database, outputStream);
 
             LOGGER.info(String.format("Exported %s %d to %s", databaseName, entries.size(), filepath));
+
         }
     }
 }

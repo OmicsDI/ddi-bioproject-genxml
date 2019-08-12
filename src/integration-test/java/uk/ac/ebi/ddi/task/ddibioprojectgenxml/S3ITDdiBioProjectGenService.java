@@ -13,6 +13,7 @@ import uk.ac.ebi.ddi.ddifileservice.services.IFileSystem;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.configuration.DdiBioProjectProperties;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.service.DdiBioProjectGenService;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -47,5 +48,6 @@ public class S3ITDdiBioProjectGenService {
                 ,ddiBioProps.getDatabases(), ddiBioProps.getFilePath());
         Path path = Paths.get(ddiBioProps.getOutputFolder());
         Assert.assertTrue(Files.exists(path));
+        fileSystem.copyDirectory("bioprojects",new File(ddiBioProps.getOutputFolder()));
     }
 }
