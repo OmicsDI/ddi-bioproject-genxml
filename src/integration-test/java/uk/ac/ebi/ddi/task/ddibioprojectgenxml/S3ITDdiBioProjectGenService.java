@@ -1,6 +1,7 @@
 package uk.ac.ebi.ddi.task.ddibioprojectgenxml;
 
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +25,7 @@ import java.nio.file.Paths;
 @TestPropertySource(properties = {
         "bioprojectxml.filePath=/tmp/testing/",
         "bioprojectxml.releaseDate=080819",
-        "bioprojectxml.outputFolder=bioprojects",
+        "bioprojectxml.outputFolder=data/bioprojects",
         "bioprojectxml.databases=GEO,dbGaP",
         "s3.env_auth=true",
         "s3.endpoint_url=https://s3.embassy.ebi.ac.uk",
@@ -36,6 +37,11 @@ public class S3ITDdiBioProjectGenService {
     @Autowired
     private DdiBioprojectGenxmlApplication ddiBioprojectGenxmlApplication;
 
+    @After
+    public void tearDown() throws Exception {
+        fileSystem.cleanDirectory(ddiBioProps.getOutputFolder());
+    }
+
     @Autowired
     private DdiBioProjectProperties ddiBioProps;
 
@@ -45,7 +51,7 @@ public class S3ITDdiBioProjectGenService {
     @Test
     public void contextLoads() throws Exception {
         ddiBioprojectGenxmlApplication.run();
-        Path path = Paths.get(ddiBioProps.getOutputFolder());
-        Assert.assertTrue(Files.exists(path));
+        Assert.assertTrue(fileSystem.listFilesFromFolder(ddiBioProps.getOutputFolder()).size() > 0);
+
     }
 }
