@@ -34,18 +34,18 @@ public class DdiBioProjectGenService {
     @Autowired
     private IDatasetService datasetService;
 
-    public void generateXML(String outputFolder, String releaseDate,String databases,String filePath){
+    public void generateXML(String outputFolder, String releaseDate, String databases, String filePath){
         try {
-            GeoClient geoClient = new GeoClient(filePath+"ncbi/Geo");
-            bioprojectsClient = new BioprojectsClient(filePath+"ncbi", geoClient);
+            GeoClient geoClient = new GeoClient(filePath + "/ncbi/Geo");
+            bioprojectsClient = new BioprojectsClient(filePath + "/ncbi", geoClient);
             LOGGER.info("Output folder is {}", outputFolder);
             generate(databases, outputFolder, releaseDate);
         } catch (Exception e) {
-            LOGGER.error("Exception occurred during generation of xml file, ", e);
+            LOGGER.error("Exception occurred during generation of xml file {} ", e);
         }
     }
 
-    public void generate(String databases,String outputFolder, String releaseDate) throws Exception {
+    public void generate(String databases, String outputFolder, String releaseDate) throws Exception {
 
         OmicsDataMarshaller mm = new OmicsDataMarshaller();
 

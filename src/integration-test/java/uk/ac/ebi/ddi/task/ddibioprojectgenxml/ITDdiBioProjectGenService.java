@@ -30,15 +30,14 @@ import java.nio.file.Paths;
 public class ITDdiBioProjectGenService {
 
     @Autowired
-    private DdiBioProjectGenService ddiBioProjectGenService;
+    private DdiBioprojectGenxmlApplication ddiBioprojectGenxmlApplication;
 
     @Autowired
     private DdiBioProjectProperties ddiBioProps;
 
     @Test
     public void contextLoads() throws Exception {
-        ddiBioProjectGenService.generateXML(ddiBioProps.getOutputFolder(), ddiBioProps.getReleaseDate()
-        ,ddiBioProps.getDatabases(), ddiBioProps.getFilePath());
+        ddiBioprojectGenxmlApplication.run();
         Path path = Paths.get(ddiBioProps.getOutputFolder());
         Assert.assertTrue(Files.exists(path));
     }

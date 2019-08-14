@@ -24,7 +24,7 @@ import java.nio.file.Paths;
 @TestPropertySource(properties = {
         "bioprojectxml.filePath=/tmp/prod/",
         "bioprojectxml.releaseDate=080819",
-        "bioprojectxml.outputFolder=/tmp/prod/bioprojects",
+        "bioprojectxml.outputFolder=bioprojects",
         "bioprojectxml.databases=GEO,dbGaP",
         "s3.env_auth=true",
         "s3.endpoint_url=https://s3.embassy.ebi.ac.uk",
@@ -34,7 +34,7 @@ import java.nio.file.Paths;
 public class S3ITDdiBioProjectGenService {
 
     @Autowired
-    private DdiBioProjectGenService ddiBioProjectGenService;
+    private DdiBioprojectGenxmlApplication ddiBioprojectGenxmlApplication;
 
     @Autowired
     private DdiBioProjectProperties ddiBioProps;
@@ -44,10 +44,8 @@ public class S3ITDdiBioProjectGenService {
 
     @Test
     public void contextLoads() throws Exception {
-        ddiBioProjectGenService.generateXML(ddiBioProps.getOutputFolder(), ddiBioProps.getReleaseDate()
-                ,ddiBioProps.getDatabases(), ddiBioProps.getFilePath());
+        ddiBioprojectGenxmlApplication.run();
         Path path = Paths.get(ddiBioProps.getOutputFolder());
         Assert.assertTrue(Files.exists(path));
-        fileSystem.copyDirectory("bioprojects",new File(ddiBioProps.getOutputFolder()));
     }
 }
