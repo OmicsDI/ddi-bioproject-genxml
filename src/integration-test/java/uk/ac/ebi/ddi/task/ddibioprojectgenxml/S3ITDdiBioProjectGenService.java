@@ -22,7 +22,7 @@ import java.nio.file.Paths;
 @ContextConfiguration(classes = DdiBioprojectGenxmlApplication.class,
         initializers = ConfigFileApplicationContextInitializer.class)
 @TestPropertySource(properties = {
-        "bioprojectxml.filePath=/tmp/prod/",
+        "bioprojectxml.filePath=/tmp/testing/",
         "bioprojectxml.releaseDate=080819",
         "bioprojectxml.outputFolder=bioprojects",
         "bioprojectxml.databases=GEO,dbGaP",
