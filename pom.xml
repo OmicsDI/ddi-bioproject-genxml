@@ -45,7 +45,12 @@
 			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
 
-
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<version>2.2.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -62,14 +67,19 @@
 		<dependency>
 			<groupId>uk.ac.ebi.ddi.api.readers</groupId>
 			<artifactId>ddi-bioproject-reader</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.2-SNAPSHOT</version>
+			<!--<version>1.0</version>-->
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+<!--		<dependency>
 			<groupId>uk.ac.ebi.ddi</groupId>
 			<artifactId>ddi-service-db</artifactId>
 			<version>1.5</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>uk.ac.ebi.ddi</groupId>
@@ -81,13 +91,6 @@
             <groupId>uk.ac.ebi.ddi</groupId>
             <artifactId>ddi-validator</artifactId>
             <version>1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>de.flapdoodle.embed</groupId>
-            <artifactId>de.flapdoodle.embed.mongo</artifactId>
-            <version>2.2.0</version>
-            <scope>test</scope>
         </dependency>
 
 	</dependencies>

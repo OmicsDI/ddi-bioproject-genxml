@@ -11,15 +11,18 @@ import uk.ac.ebi.ddi.api.readers.utils.Constants;
 import uk.ac.ebi.ddi.api.readers.utils.Transformers;
 import uk.ac.ebi.ddi.ddifileservice.services.IFileSystem;
 import uk.ac.ebi.ddi.ddifileservice.type.ConvertibleOutputStream;
-import uk.ac.ebi.ddi.service.db.repo.dataset.IDatasetRepo;
-import uk.ac.ebi.ddi.service.db.service.dataset.DatasetService;
 import uk.ac.ebi.ddi.service.db.service.dataset.IDatasetService;
 import uk.ac.ebi.ddi.xml.validator.parser.marshaller.OmicsDataMarshaller;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Database;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Entry;
 
-import java.io.File;
+import java.io.*;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -31,11 +34,21 @@ public class DdiBioProjectGenService {
 
     private BioprojectsClient bioprojectsClient;
 
+    private static final int LINES_PER_SPLIT = 500;
+
+    private static final String BIOPROJECT_ENDPOINT = "ftp://ftp.ncbi.nlm.nih.gov/bioproject/summary.txt";
+
     @Autowired
     private IDatasetService datasetService;
 
-    public void generateXML(String outputFolder, String releaseDate, String databases, String filePath){
+    @Autowired
+    private IFileSystem fileSystem;
+
+    public void generateXML(String outputFolder, String releaseDate, String databases, String filePath) {
         try {
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            releaseDate = formatter.format(date);
             GeoClient geoClient = new GeoClient(filePath + "/ncbi/Geo");
             bioprojectsClient = new BioprojectsClient(filePath + "/ncbi", geoClient);
             LOGGER.info("Output folder is {}", outputFolder);
@@ -51,65 +64,117 @@ public class DdiBioProjectGenService {
 
         LOGGER.info("Calling GenerateBioprojectsOmicsXML generate");
 
-        if (bioprojectsClient == null) {
-            throw new Exception("bioprojectsClient is null");
+        String summaryPath = bioprojectsClient.getFilePath() + "/summary.txt";
+
+        File f = new File(summaryPath);
+        URL website = new URL(BIOPROJECT_ENDPOINT);
+        try (InputStream in = website.openStream()) {
+            Files.copy(in, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
-        List<BioprojectDataset> datasets = bioprojectsClient.getAllDatasets()
-                .stream().filter(Objects::nonNull).collect(Collectors.toList());
+        splitFile(summaryPath, bioprojectsClient.getFilePath() + "/ids");
 
-        LOGGER.info("All datasets count is " + datasets.size());
+        File idFolder = new File(bioprojectsClient.getFilePath() + "/ids");
 
-        if (datasets.size() == 0) {
-            LOGGER.info("bioprojectsClient.getAllDatasets() returned zero datasets");
-            return;
-        }
+        if (idFolder.isDirectory()) {
+            int count = 1;
+            for (File file: idFolder.listFiles()) {
 
-        LOGGER.info("Returned {} datasets", datasets.size());
+            List<BioprojectDataset> datasets = bioprojectsClient.getAllDatasets(file.getPath())
+                    .stream().filter(Objects::nonNull).collect(Collectors.toList());
 
-        LOGGER.info("Starting to insert datasets...");
+            LOGGER.info("All datasets count is " + datasets.size());
 
-        for (String databaseName : databases.split(",")) {
-            List<Entry> entries = new ArrayList<>();
+            if (datasets.size() == 0) {
+                LOGGER.info("bioprojectsClient.getAllDatasets() returned zero datasets");
+                return;
+            }
 
-            LOGGER.info("Processing database: {} ", databaseName);
+            LOGGER.info("Returned {} datasets", datasets.size());
 
-            datasets.forEach(dataset -> {
-                if (dataset.getIdentifier() != null && dataset.getRepository().equals(databaseName)) {
-                    dataset.addOmicsType(Constants.GENOMICS_TYPE);
-                    String accession = dataset.getIdentifier();
-                    //List<Dataset> existingDatasets = this.datasetService.getBySecondaryAccession(accession);
-                    if (datasetService.existsBySecondaryAccession(accession)) {
-                        //dataset already exists in OmicsDI, TODO: add some data
-                        //this.datasetService.setDatasetNote();
-                        LOGGER.info("Accession " + accession + " exists as secondary accession");
-                    } else {
-                        entries.add(Transformers.transformAPIDatasetToEntry(dataset)); //
+            LOGGER.info("Starting to insert datasets...");
+
+            for (String databaseName : databases.split(",")) {
+                List<Entry> entries = new ArrayList<>();
+
+                LOGGER.info("Processing database: {} ", databaseName);
+
+                datasets.forEach(dataset -> {
+                    if (dataset.getIdentifier() != null && dataset.getRepository().equals(databaseName)) {
+                        dataset.addOmicsType(Constants.GENOMICS_TYPE);
+                        String accession = dataset.getIdentifier();
+                        //List<Dataset> existingDatasets = this.datasetService.getBySecondaryAccession(accession);
+                        if (datasetService.existsBySecondaryAccession(accession)) {
+                            //dataset already exists in OmicsDI, TODO: add some data
+                            //this.datasetService.setDatasetNote();
+                            LOGGER.info("Accession " + accession + " exists as secondary accession");
+                        } else {
+                            entries.add(Transformers.transformAPIDatasetToEntry(dataset)); //
+                        }
                     }
+                });
+
+                LOGGER.info("Found datasets entries : {}", entries.size());
+
+                String filepath = outputFolder + "/" + databaseName + "_" + count + "_data.xml";
+
+                ConvertibleOutputStream outputStream = new ConvertibleOutputStream();
+
+                LOGGER.info("Filepath is " + filepath);
+
+                Database database = new Database();
+                //database.setDescription(Constants.GEO_DESCRIPTION);
+                database.setName(databaseName); //Constants.GEO
+                database.setRelease(releaseDate);
+                database.setEntries(entries);
+                database.setEntryCount(entries.size());
+
+
+                LOGGER.info("Writing bioproject file at location " + filepath);
+                mm.marshall(database, outputStream);
+                fileSystem.saveFile(outputStream, filepath);
+                LOGGER.info(String.format("Exported %s %d to %s", databaseName, entries.size(), filepath));
+                count++;
+            }
+
+            }
+        }
+    }
+
+    public void splitFile(String inputFilePath, String outputFolderPath) {
+        long linesWritten = 0;
+        int count = 1;
+
+        try {
+            File inputFile = new File(inputFilePath);
+            InputStream inputFileStream = new BufferedInputStream(new FileInputStream(inputFile));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputFileStream));
+
+            String line = reader.readLine();
+
+            String fileName = inputFile.getName();
+            String outfileName = outputFolderPath + "/" + fileName.replace(".txt", "");
+
+            while (line != null) {
+                File outFile = new File(outfileName + "_" + count + ".txt");
+                Writer writer = new OutputStreamWriter(new FileOutputStream(outFile));
+
+                while (line != null && linesWritten < LINES_PER_SPLIT) {
+                    writer.write(line);
+                    writer.write(System.lineSeparator());
+                    line = reader.readLine();
+                    linesWritten++;
                 }
-            });
 
-            LOGGER.info("Found datasets entries : {}", entries.size());
+                writer.close();
+                linesWritten = 0; //next file
+                count++; //nect file count
+            }
 
-            String filepath = outputFolder + "/" + databaseName + "_data.xml";
+            reader.close();
 
-            ConvertibleOutputStream outputStream = new ConvertibleOutputStream();
-
-            LOGGER.info("Filepath is " + filepath);
-
-            Database database = new Database();
-            //database.setDescription(Constants.GEO_DESCRIPTION);
-            database.setName(databaseName); //Constants.GEO
-            database.setRelease(releaseDate);
-            database.setEntries(entries);
-            database.setEntryCount(entries.size());
-
-
-            LOGGER.info("Writing bioproject file at location " + filepath);
-            mm.marshall(database, outputStream);
-
-            LOGGER.info(String.format("Exported %s %d to %s", databaseName, entries.size(), filepath));
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -54,4 +54,11 @@ public class S3ITDdiBioProjectGenService {
         Assert.assertTrue(fileSystem.listFilesFromFolder(ddiBioProps.getOutputFolder()).size() > 0);
 
     }
+
+    @Test
+    public void copyFile(){
+        fileSystem.copyDirectory("data/bioprojects/input",new File("/tmp/omics/exp"));
+    }
+
+
 }

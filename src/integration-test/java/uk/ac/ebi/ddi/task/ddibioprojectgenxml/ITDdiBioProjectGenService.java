@@ -41,4 +41,5 @@ public class ITDdiBioProjectGenService {
         Path path = Paths.get(ddiBioProps.getOutputFolder());
         Assert.assertTrue(Files.exists(path));
     }
+
 }

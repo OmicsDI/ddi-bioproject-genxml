@@ -11,9 +11,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableTask
 @EnableMongoRepositories(value = "uk.ac.ebi.ddi.service.db.repo")
 @ComponentScan({"uk.ac.ebi.ddi.service.db",
-        "uk.ac.ebi.ddi.xml.validator.parser.marshaller",
         "uk.ac.ebi.ddi.ddifileservice"})
-@EnableConfigurationProperties( DdiBioProjectProperties.class)
+@EnableConfigurationProperties({DdiBioProjectProperties.class})
 public class TaskConfiguration {
 
 }
