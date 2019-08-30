@@ -65,28 +65,29 @@ public class DdiBioProjectGenService {
         OmicsDataMarshaller mm = new OmicsDataMarshaller();
 
         LOGGER.info("Calling GenerateBioprojectsOmicsXML generate");
-        Path path = Paths.get("tmp/ids");
-        Files.createDirectories(path);
+        Path tempIdPath = Paths.get("tmp/ids");
+        Files.createDirectories(tempIdPath);
 
         //String summaryPath = bioprojectsClient.getFilePath() + "/summary.txt";
-        String summaryPath = "tmp" + "/summary.txt";
-        File f = new File(summaryPath);
+        String summaryPath = "tmp/summary.txt";
+
+        File summaryFile = new File(summaryPath);
         URL website = new URL(BIOPROJECT_ENDPOINT);
         try (InputStream in = website.openStream()) {
-            Files.copy(in, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(in, summaryFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
         //splitFile(summaryPath, bioprojectsClient.getFilePath() + "/ids");
-        splitFile(summaryPath, "tmp" + "/ids");
+        splitFile(summaryPath, tempIdPath.toString());
 
         //File idFolder = new File(bioprojectsClient.getFilePath() + "/ids");
-        File idFolder = new File("tmp" + "/ids");
+        File idFolder = new File(tempIdPath.toString());
 
         if (idFolder.isDirectory()) {
             int count = 1;
-            for (File file: idFolder.listFiles()) {
+            for (File idFile: idFolder.listFiles()) {
 
-            List<BioprojectDataset> datasets = bioprojectsClient.getAllDatasets(file.getPath())
+            List<BioprojectDataset> datasets = bioprojectsClient.getAllDatasets(idFile.getPath())
                     .stream().filter(Objects::nonNull).collect(Collectors.toList());
 
             LOGGER.info("All datasets count is " + datasets.size());
@@ -106,6 +107,7 @@ public class DdiBioProjectGenService {
                 LOGGER.info("Processing database: {} ", databaseName);
 
                 datasets.forEach(dataset -> {
+
                     if (dataset.getIdentifier() != null && dataset.getRepository().equals(databaseName)) {
                         dataset.addOmicsType(Constants.GENOMICS_TYPE);
                         String accession = dataset.getIdentifier();
@@ -122,25 +124,31 @@ public class DdiBioProjectGenService {
 
                 LOGGER.info("Found datasets entries : {}", entries.size());
 
-                String filepath = outputFolder + "/" + databaseName + "_" + count + "_data.xml";
+                String outputFilePath = outputFolder + "/" + databaseName + "_" + count + "_data.xml";
 
-                ConvertibleOutputStream outputStream = new ConvertibleOutputStream();
+                try (ConvertibleOutputStream outputStream = new ConvertibleOutputStream()) {
 
-                LOGGER.info("Filepath is " + filepath);
+                    LOGGER.info("output folder Filepath is " + outputFilePath);
 
-                Database database = new Database();
-                //database.setDescription(Constants.GEO_DESCRIPTION);
-                database.setName(databaseName); //Constants.GEO
-                database.setRelease(releaseDate);
-                database.setEntries(entries);
-                database.setEntryCount(entries.size());
+                    Database database = new Database();
+                    //database.setDescription(Constants.GEO_DESCRIPTION);
+                    database.setName(databaseName); //Constants.GEO
+                    database.setRelease(releaseDate);
+                    database.setEntries(entries);
+                    database.setEntryCount(entries.size());
 
+                    LOGGER.info("Writing bioproject idFile at location " + outputFilePath);
 
-                LOGGER.info("Writing bioproject file at location " + filepath);
-                mm.marshall(database, outputStream);
-                fileSystem.saveFile(outputStream, filepath);
-                LOGGER.info(String.format("Exported %s %d to %s", databaseName, entries.size(), filepath));
-                count++;
+                    mm.marshall(database, outputStream);
+
+                    fileSystem.saveFile(outputStream, outputFilePath);
+
+                    outputStream.close();
+
+                    LOGGER.info(String.format("Exported %s %d to %s", databaseName, entries.size(), outputFilePath));
+
+                    count++;
+                }
             }
 
             }
@@ -151,8 +159,10 @@ public class DdiBioProjectGenService {
         long linesWritten = 0;
         int count = 1;
         File inputFile = new File(inputFilePath);
-        InputStream inputFileStream = new BufferedInputStream(new FileInputStream(inputFile));
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputFileStream));) {
+        try (
+                InputStream inputFileStream = new BufferedInputStream(new FileInputStream(inputFile));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputFileStream))
+                ) {
 
             String line = reader.readLine();
 
@@ -174,8 +184,6 @@ public class DdiBioProjectGenService {
                 linesWritten = 0; //next file
                 count++; //nect file count
             }
-
-            reader.close();
 
         } catch (Exception e) {
             e.printStackTrace();

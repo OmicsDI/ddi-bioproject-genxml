@@ -33,7 +33,8 @@ public class DdiBioprojectGenxmlApplication implements CommandLineRunner {
         // creating temporary folder
         Path geoPath = Paths.get(ddiBioProjectProperties.getFilePath() + "/ncbi/Geo");
         Files.createDirectories(geoPath);
-        Path bioprojectPath = Paths.get(ddiBioProjectProperties.getFilePath() + "/bioprojects");
+        //Path bioprojectPath = Paths.get(ddiBioProjectProperties.getFilePath() + "/bioprojects");
+        Path bioprojectPath = Paths.get(ddiBioProjectProperties.getOutputFolder());
         Files.createDirectories(bioprojectPath);
         // Your code goes here
         ddiBioProjectGenService.generateXML(bioprojectPath.toString(),
