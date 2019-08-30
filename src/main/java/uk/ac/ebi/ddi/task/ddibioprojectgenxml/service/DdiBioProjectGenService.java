@@ -19,6 +19,8 @@ import uk.ac.ebi.ddi.xml.validator.parser.model.Entry;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -63,18 +65,22 @@ public class DdiBioProjectGenService {
         OmicsDataMarshaller mm = new OmicsDataMarshaller();
 
         LOGGER.info("Calling GenerateBioprojectsOmicsXML generate");
+        Path path = Paths.get("tmp/ids");
+        Files.createDirectories(path);
 
-        String summaryPath = bioprojectsClient.getFilePath() + "/summary.txt";
-
+        //String summaryPath = bioprojectsClient.getFilePath() + "/summary.txt";
+        String summaryPath = "tmp" + "/summary.txt";
         File f = new File(summaryPath);
         URL website = new URL(BIOPROJECT_ENDPOINT);
         try (InputStream in = website.openStream()) {
             Files.copy(in, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
-        splitFile(summaryPath, bioprojectsClient.getFilePath() + "/ids");
+        //splitFile(summaryPath, bioprojectsClient.getFilePath() + "/ids");
+        splitFile(summaryPath, "tmp" + "/ids");
 
-        File idFolder = new File(bioprojectsClient.getFilePath() + "/ids");
+        //File idFolder = new File(bioprojectsClient.getFilePath() + "/ids");
+        File idFolder = new File("tmp" + "/ids");
 
         if (idFolder.isDirectory()) {
             int count = 1;
