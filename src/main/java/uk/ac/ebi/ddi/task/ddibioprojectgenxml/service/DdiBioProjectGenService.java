@@ -36,7 +36,7 @@ public class DdiBioProjectGenService {
 
     private BioprojectsClient bioprojectsClient;
 
-    private static final int LINES_PER_SPLIT = 500;
+    private static final int LINES_PER_SPLIT = 50;
 
     private static final String BIOPROJECT_ENDPOINT = "ftp://ftp.ncbi.nlm.nih.gov/bioproject/summary.txt";
 
@@ -150,11 +150,9 @@ public class DdiBioProjectGenService {
     public void splitFile(String inputFilePath, String outputFolderPath) {
         long linesWritten = 0;
         int count = 1;
-
-        try {
-            File inputFile = new File(inputFilePath);
-            InputStream inputFileStream = new BufferedInputStream(new FileInputStream(inputFile));
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputFileStream));
+        File inputFile = new File(inputFilePath);
+        InputStream inputFileStream = new BufferedInputStream(new FileInputStream(inputFile));
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputFileStream));) {
 
             String line = reader.readLine();
 
