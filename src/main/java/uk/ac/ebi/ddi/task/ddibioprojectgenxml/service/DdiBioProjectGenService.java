@@ -94,7 +94,7 @@ public class DdiBioProjectGenService {
 
             if (datasets.size() == 0) {
                 LOGGER.info("bioprojectsClient.getAllDatasets() returned zero datasets");
-                return;
+                continue;
             }
 
             LOGGER.info("Returned {} datasets", datasets.size());
