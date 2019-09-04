@@ -170,7 +170,7 @@ public class BioProjectService {
         return dataset;
     }
 
-    private BioprojectDataset readDatasetInfo(Element datasetNode) {
+    private BioprojectDataset readDatasetInfo(Element datasetNode, String databaseName) {
         String accession = "Unable to retrieve";
         try {
             // XPath is not thread-safe
@@ -179,7 +179,7 @@ public class BioProjectService {
                     datasetNode, "./ProjectID/ArchiveID", "accession", xPath);
             String database = XMLUtils.readFirstAttribute(
                     datasetNode, "./ProjectDescr/ExternalLink/dbXREF", "db", xPath);
-            if (null != database) {
+            if (databaseName.equalsIgnoreCase(database)) {
                 return parseDataset(datasetNode, xPath, database);
             }
         } catch (Exception e) {
@@ -188,7 +188,7 @@ public class BioProjectService {
         return null;
     }
 
-    public List<BioprojectDataset> getDatasets(List<String> ids) throws Exception {
+    public List<BioprojectDataset> getDatasets(List<String> ids, String databaseName) throws Exception {
         List<BioprojectDataset> results = new ArrayList<>();
         File allDatasetsContent = readDatasets(ids);
         DocumentBuilder dBuilder = DB_FACTORY.get().newDocumentBuilder();
@@ -198,7 +198,7 @@ public class BioProjectService {
         int totalResults = datasetsXml.getLength();
 
         for (int i = 0; i < totalResults; i++) {
-            BioprojectDataset dataset = readDatasetInfo((Element) datasetsXml.item(i));
+            BioprojectDataset dataset = readDatasetInfo((Element) datasetsXml.item(i), databaseName);
             if (dataset != null) {
                 results.add(dataset);
             }
