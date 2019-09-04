@@ -10,8 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableTask
 @EnableMongoRepositories(value = "uk.ac.ebi.ddi.service.db.repo")
-@ComponentScan({"uk.ac.ebi.ddi.service.db",
-        "uk.ac.ebi.ddi.ddifileservice"})
+@ComponentScan({"uk.ac.ebi.ddi.service.db", "uk.ac.ebi.ddi.ddifileservice"})
 @EnableConfigurationProperties({DdiBioProjectProperties.class})
 public class TaskConfiguration {
 
