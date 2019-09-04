@@ -54,10 +54,10 @@ public class DdiBioProjectGenService {
 
 
     public List<Entry> getDatasets(List<String> ids, String databaseName) throws Exception {
-        List<BioprojectDataset> datasets = bioProjectService.getDatasets(ids);
+        List<BioprojectDataset> datasets = bioProjectService.getDatasets(ids, databaseName);
         List<Entry> entries = new ArrayList<>();
         for (BioprojectDataset dataset : datasets) {
-            if (dataset.getIdentifier() != null && dataset.getRepository().equals(databaseName)) {
+            if (dataset.getIdentifier() != null) {
                 dataset.addOmicsType(Constants.GENOMICS_TYPE);
                 String accession = dataset.getIdentifier();
                 if (datasetService.existsBySecondaryAccession(accession)) {

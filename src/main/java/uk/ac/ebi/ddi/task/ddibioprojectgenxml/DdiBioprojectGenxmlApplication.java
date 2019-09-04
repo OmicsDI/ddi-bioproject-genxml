@@ -62,11 +62,21 @@ public class DdiBioprojectGenxmlApplication implements CommandLineRunner {
             } catch (Exception e) {
                 LOGGER.error("Exception occurred when trying to get datasets for ids: {}, ", batch, e);
             }
-            if (entries.size() > 0 && entries.size() % taskProperties.getEntriesPerFile() == 0) {
-                writeDatasetsToFile(entries, entries.size(), fileCount.getAndIncrement());
+            if (entries.size() > 0 && entries.size() > taskProperties.getEntriesPerFile()) {
+                writeDatasetsToFile(entries, taskProperties.getEntriesPerFile(), fileCount);
             }
         }
         writeDatasetsToFile(entries, entries.size(), fileCount.getAndIncrement());
+    }
+
+    private void writeDatasetsToFile(List<Entry> entries, int cap, AtomicInteger counter) throws IOException {
+        List<Entry> tobeWritten = new ArrayList<>();
+        while (entries.size() > 0) {
+            tobeWritten.add(entries.remove(0));
+            if (tobeWritten.size() % cap == 0) {
+                writeDatasetsToFile(tobeWritten, cap, counter.getAndIncrement());
+            }
+        }
     }
 
     private void writeDatasetsToFile(List<Entry> entries, int total, int fileCount) throws IOException {
