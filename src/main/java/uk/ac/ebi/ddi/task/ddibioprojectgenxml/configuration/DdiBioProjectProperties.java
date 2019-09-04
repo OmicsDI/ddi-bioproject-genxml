@@ -5,28 +5,46 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("bioprojectxml")
 public class DdiBioProjectProperties {
 
-    private String filePath;
-
-    private String releaseDate;
-
     private String outputFolder;
 
-    private String databases;
+    private String database;
 
-    public String getFilePath() {
-        return filePath;
+    private String prefix = "BioProject-";
+
+    private int batchSize = 100;
+
+    private int entriesPerFile = 10;
+
+    public int getEntriesPerFile() {
+        return entriesPerFile;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setEntriesPerFile(int entriesPerFile) {
+        this.entriesPerFile = entriesPerFile;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getDatabase() {
+        return database;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setDatabase(String database) {
+        this.database = database;
+    }
+
+    public int getBatchSize() {
+        return batchSize;
+    }
+
+    public void setBatchSize(int batchSize) {
+        this.batchSize = batchSize;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     public String getOutputFolder() {
@@ -35,14 +53,6 @@ public class DdiBioProjectProperties {
 
     public void setOutputFolder(String outputFolder) {
         this.outputFolder = outputFolder;
-    }
-
-    public String getDatabases() {
-        return databases;
-    }
-
-    public void setDatabases(String databases) {
-        this.databases = databases;
     }
 
 }
