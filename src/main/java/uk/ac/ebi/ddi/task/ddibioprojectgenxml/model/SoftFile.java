@@ -5,10 +5,7 @@ import org.apache.commons.io.LineIterator;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by azorin on 28/11/2017.
@@ -19,7 +16,7 @@ public class SoftFile {
     protected String id;
     protected Map<String, List<String>> attributes = new HashMap<>();
 
-    public SoftFile(File file) throws IOException {
+    public SoftFile(File file, Set<String> allowedAttribute) throws IOException {
         LineIterator it = FileUtils.lineIterator(file, "UTF-8");
         try {
             while (it.hasNext()) {
@@ -30,6 +27,9 @@ public class SoftFile {
                     id = entry.getValue();
                 } else if (line.startsWith("!")) {
                     SoftFileEntry entry = parseLine(line);
+                    if (!allowedAttribute.contains(entry.getKey())) {
+                        continue;
+                    }
                     List<String> values = attributes.computeIfAbsent(entry.getKey(), k -> new ArrayList<>());
                     values.add(entry.getValue());
                 }

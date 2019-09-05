@@ -22,6 +22,7 @@ import java.nio.file.Files;
 @TestPropertySource(properties = {
         "bioprojectxml.outputFolder=/tmp/testing/bioprojects",
         "bioprojectxml.database=GEO",
+        "bioprojectxml.batch_size=100",
         "file.provider=local"
 })
 public class ITDdiBioProjectGenService {

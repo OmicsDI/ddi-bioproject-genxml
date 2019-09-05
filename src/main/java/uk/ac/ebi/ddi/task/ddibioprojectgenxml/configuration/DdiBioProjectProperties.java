@@ -11,9 +11,19 @@ public class DdiBioProjectProperties {
 
     private String prefix = "BioProject-";
 
-    private int batchSize = 100;
+    private String apiKey = "";
+
+    private int batchSize = 30;
 
     private int entriesPerFile = 10;
+
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
     public int getEntriesPerFile() {
         return entriesPerFile;
