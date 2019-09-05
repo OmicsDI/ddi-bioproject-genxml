@@ -210,6 +210,7 @@ public class BioProjectService {
                 results.add(dataset);
             }
         }
+        allDatasetsContent.delete();
         return results;
     }
 }

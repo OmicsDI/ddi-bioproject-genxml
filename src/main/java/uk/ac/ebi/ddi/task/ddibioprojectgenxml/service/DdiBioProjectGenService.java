@@ -47,6 +47,7 @@ public class DdiBioProjectGenService {
             }
         } finally {
             LineIterator.closeQuietly(it);
+            summaryFile.delete();
         }
 
         return result;
