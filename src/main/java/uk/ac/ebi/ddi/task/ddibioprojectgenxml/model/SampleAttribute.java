@@ -22,7 +22,7 @@ public enum SampleAttribute {
     Sample_growth_protocol_ch1("Sample_growth_protocol_ch1"),
 //    Sample_molecule_ch1("Sample_molecule_ch1"),
 //    Sample_extract_protocol_ch1("Sample_extract_protocol_ch1"),
-    Sample_data_processing("Sample_data_processing"),
+    Sample_data_processing("Sample_data_processing");
 //    Sample_platform_id("Sample_platform_id"),
 //    Sample_contact_name("Sample_contact_name"),
 //    Sample_contact_email("Sample_contact_email"),
@@ -40,7 +40,6 @@ public enum SampleAttribute {
 //    Sample_supplementary_file_2("Sample_supplementary_file_2"),
 //    Sample_series_id("Sample_series_id"),
 //    Sample_data_row_count("Sample_data_row_count")
-    ;
 
     private final String name;
 
