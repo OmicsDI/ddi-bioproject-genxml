@@ -56,7 +56,7 @@ public class BioProjectService {
             builder.queryParam("api_key", properties.getApiKey());
         }
         File datasets = File.createTempFile("bioproject", "dataset.xml");
-        FileDownloadUtils.downloadFile(builder.toUriString(), datasets);
+        FileDownloadUtils.httpDownloadFile(builder.toUriString(), datasets);
         return datasets;
     }
 
