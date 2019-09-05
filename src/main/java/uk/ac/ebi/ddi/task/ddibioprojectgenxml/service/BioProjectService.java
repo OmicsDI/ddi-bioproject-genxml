@@ -12,6 +12,7 @@ import org.xml.sax.InputSource;
 import uk.ac.ebi.ddi.api.readers.utils.Constants;
 import uk.ac.ebi.ddi.api.readers.utils.XMLUtils;
 import uk.ac.ebi.ddi.ddidomaindb.database.DB;
+import uk.ac.ebi.ddi.task.ddibioprojectgenxml.configuration.DdiBioProjectProperties;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.BioprojectDataset;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.PlatformFile;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.SampleFile;
@@ -44,10 +45,16 @@ public class BioProjectService {
     @Autowired
     private GeoService geoService;
 
+    @Autowired
+    private DdiBioProjectProperties properties;
+
     private File readDatasets(List<String> ids) throws Exception {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(NCBI_ENDPOINT)
                 .queryParam("db", "bioproject")
                 .queryParam("id", String.join(",", ids));
+        if (!properties.getApiKey().isEmpty()) {
+            builder.queryParam("api_key", properties.getApiKey());
+        }
         File datasets = File.createTempFile("bioproject", "dataset.xml");
         FileDownloadUtils.downloadFile(builder.toUriString(), datasets);
         return datasets;
@@ -98,7 +105,7 @@ public class BioProjectService {
         String platformId = series.getPlatformId();
         if (null != platformId) {
             PlatformFile platformFile = geoService.getPlatform(platformId);
-            dataset.addInstrument(platformFile.get_Title());
+            dataset.addInstrument(platformFile.getTitle());
         }
         dataset.setFullLink("https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=" + dataset.getIdentifier());
         if (series.getSampleIds().size() > 0) {

@@ -9,14 +9,14 @@ public class PlatformFile extends SoftFile {
     private static final String PLATFORM_TYPE = "PLATFORM";
 
     public PlatformFile(File file) throws Exception {
-        super(file);
+        super(file, PlatformAttribute.getKeys());
 
         if (!this.type.equals(PLATFORM_TYPE)) {
             throw new Exception("expected PLATFORM, received " + this.type);
         }
     }
 
-    public String get_Title() {
+    public String getTitle() {
         return this.getFirstAttribute(PlatformAttribute.Platform_title.getName());
     }
 }

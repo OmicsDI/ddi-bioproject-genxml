@@ -12,7 +12,7 @@ public class SeriesFile extends SoftFile {
     private static final String SERIES_TYPE = "SERIES";
 
     public SeriesFile(File file) throws Exception {
-        super(file);
+        super(file, SeriesAttribute.getKeys());
 
         if (!this.type.equals(SERIES_TYPE)) {
             throw new Exception("expected SERIES, received " + this.type);

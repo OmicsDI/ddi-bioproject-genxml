@@ -9,14 +9,14 @@ public class SampleFile extends SoftFile {
     private static final String SAMPLE_TYPE = "SAMPLE";
 
     public SampleFile(File file) throws Exception {
-        super(file);
+        super(file, SampleAttribute.getKeys());
 
         if (!this.type.equals(SAMPLE_TYPE)) {
             throw new Exception("expected SAMPLE, received " + this.type);
         }
     }
 
-    public String get_Title() {
+    public String getTitle() {
         return this.getFirstAttribute(SampleAttribute.Sample_title.getName());
     }
 
