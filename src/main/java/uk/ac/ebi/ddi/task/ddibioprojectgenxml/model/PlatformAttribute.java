@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public enum PlatformAttribute {
 
-    Platform_title("Platform_title"),
+    Platform_title("Platform_title");
 //    Platform_geo_accession("Platform_geo_accession"),
 //    Platform_status("Platform_status"),
 //    Platform_submission_date("Platform_submission_date"),
@@ -35,7 +35,6 @@ public enum PlatformAttribute {
 //    Platform_relation("Platform_relation"),
 //    Platform_series_id("Platform_series_id"),
 //    Platform_data_row_count("Platform_data_row_count")
-    ;
 
     private final String name;
 

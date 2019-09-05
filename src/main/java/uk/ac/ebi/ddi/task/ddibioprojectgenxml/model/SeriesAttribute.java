@@ -31,10 +31,9 @@ public enum SeriesAttribute {
     Series_supplementary_file("Series_supplementary_file"),
     Series_platform_id("Series_platform_id"),
 //    Series_platform_organism("Series_platform_organism"),
-    Series_sample_organism("Series_sample_organism"),
+    Series_sample_organism("Series_sample_organism");
 //    Series_sample_taxid("Series_sample_taxid"),
 //    Series_relation("Series_relation")
-    ;
 
     private final String name;
 
