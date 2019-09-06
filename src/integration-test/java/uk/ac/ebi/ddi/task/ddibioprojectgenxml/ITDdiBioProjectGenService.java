@@ -20,7 +20,8 @@ import java.nio.file.Files;
 @ContextConfiguration(classes = DdiBioprojectGenxmlApplication.class,
         initializers = ConfigFileApplicationContextInitializer.class)
 @TestPropertySource(properties = {
-        "bioprojectxml.outputFolder=/tmp/testing/bioprojects",
+        "bioprojectxml.outputFolder=/tmp/testing/bioprojects/out",
+        "bioprojectxml.inputFolder=/tmp/testing/bioprojects/in",
         "bioprojectxml.database=GEO",
         "bioprojectxml.batch_size=100",
         "file.provider=local"
@@ -39,6 +40,12 @@ public class ITDdiBioProjectGenService {
     @Before
     public void setUp() throws Exception {
         Files.createDirectories(new File(ddiBioProps.getOutputFolder()).toPath());
+        Files.createDirectories(new File(ddiBioProps.getInputFolder()).toPath());
+        File importFile = new File(getClass().getClassLoader().getResource("output_0.xml").getFile());
+        fileSystem.copyFile(importFile, ddiBioProps.getInputFolder() + "/output_0.xml");
+
+        importFile = new File(getClass().getClassLoader().getResource("output_1.xml").getFile());
+        fileSystem.copyFile(importFile, ddiBioProps.getInputFolder() + "/output_1.xml");
     }
 
     @Test

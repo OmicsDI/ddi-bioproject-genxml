@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.util.UriComponentsBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -17,7 +16,6 @@ import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.BioprojectDataset;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.PlatformFile;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.SampleFile;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.SeriesFile;
-import uk.ac.ebi.ddi.task.ddibioprojectgenxml.util.FileDownloadUtils;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,7 +34,6 @@ import java.util.List;
 public class BioProjectService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BioProjectService.class);
-    private static final String NCBI_ENDPOINT = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi";
     private static final ThreadLocal<XPathFactory> XPATH_FACTORY = ThreadLocal.withInitial(XPathFactory::newInstance);
 
     private static final ThreadLocal<DocumentBuilderFactory> DB_FACTORY =
@@ -47,18 +44,6 @@ public class BioProjectService {
 
     @Autowired
     private DdiBioProjectProperties properties;
-
-    private File readDatasets(List<String> ids) throws Exception {
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(NCBI_ENDPOINT)
-                .queryParam("db", "bioproject")
-                .queryParam("id", String.join(",", ids));
-        if (!properties.getApiKey().isEmpty()) {
-            builder.queryParam("api_key", properties.getApiKey());
-        }
-        File datasets = File.createTempFile("bioproject", "dataset.xml");
-        FileDownloadUtils.httpDownloadFile(builder.toUriString(), datasets);
-        return datasets;
-    }
 
     private void addGeoAdditionInformations(BioprojectDataset dataset) throws Exception {
         SeriesFile series = geoService.getSeries(dataset.getIdentifier());
@@ -195,13 +180,12 @@ public class BioProjectService {
         return null;
     }
 
-    public List<BioprojectDataset> getDatasets(List<String> ids, String databaseName) throws Exception {
+    public List<BioprojectDataset> getDatasets(File datasetFile, String databaseName) throws Exception {
         List<BioprojectDataset> results = new ArrayList<>();
-        File allDatasetsContent = readDatasets(ids);
         DocumentBuilder dBuilder = DB_FACTORY.get().newDocumentBuilder();
-        Document doc = dBuilder.parse(new InputSource(new FileInputStream(allDatasetsContent)));
+        Document doc = dBuilder.parse(new InputSource(new FileInputStream(datasetFile)));
         XPath xPath = XPATH_FACTORY.get().newXPath();
-        NodeList datasetsXml = XMLUtils.findElements(doc, "/RecordSet/DocumentSummary/Project", xPath);
+        NodeList datasetsXml = XMLUtils.findElements(doc, "/PackageSet/Package/Project/Project", xPath);
         int totalResults = datasetsXml.getLength();
 
         for (int i = 0; i < totalResults; i++) {
@@ -210,7 +194,6 @@ public class BioProjectService {
                 results.add(dataset);
             }
         }
-        allDatasetsContent.delete();
         return results;
     }
 }
