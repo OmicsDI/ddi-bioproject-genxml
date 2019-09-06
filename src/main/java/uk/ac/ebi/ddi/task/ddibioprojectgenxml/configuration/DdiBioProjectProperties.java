@@ -9,6 +9,8 @@ public class DdiBioProjectProperties {
 
     private String inputFolder;
 
+    private String intermediateFolder = "/tmp";
+
     private String database;
 
     private String prefix = "BioProject-";
@@ -21,6 +23,14 @@ public class DdiBioProjectProperties {
 
     public void setInputFolder(String inputFolder) {
         this.inputFolder = inputFolder;
+    }
+
+    public String getIntermediateFolder() {
+        return intermediateFolder;
+    }
+
+    public void setIntermediateFolder(String intermediateFolder) {
+        this.intermediateFolder = intermediateFolder;
     }
 
     public int getEntriesPerFile() {
