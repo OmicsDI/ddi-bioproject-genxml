@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PackageSet><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84483" archive="NCBI" id="84483"/>
+        <CenterID center="GEO" id="0">GSE112</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Homo sapiens</Name>
+        <Title>Distinctive gene expression patterns in gastrointestinal stromal tumors identified with cDNA arrays</Title>
+        <Description>Gastrointestinal stromal tumors (GIST) are phenotypically and clinically heterogeneous mesenchymal tumors. Using the cDNA array technique, we analyzed the gene expression profiles of 22 GIST and 7 non-neoplastic gastrointestinal smooth muscle specimens, in order to detect molecular differences between GIST and non-neoplastic tissue, and to detect differences between GIST of various phenotypic and clinical subgroups. As a result, we found 796 differentially expressed genes and ESTs between GIST and smooth muscle tissue, including promising new candidate genes for the pathogenesis of GIST. Furthermore, we identified differences in gene expression between GIST of different site, size, and immunohistochemical expression of CD34 and SMA. Our data show that alterations in gene expression are associated with morphologically and clinically detectable features of GIST and provide new aspects for the understanding of these tumors.
+Keywords = Gastrointestinal Stromal Tumor (GIST)
+Keywords: other</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE112</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2003-04-10T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="9606" taxID="9606">
+              <OrganismName>Homo sapiens</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2014-06-17" submission_id="SUB571654" submitted="2002-12-11">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Molecular Genome Analysis, German Cancer Research Center</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84483" archive="NCBI" id="84483"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9558" archive="NCBI" id="9558"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84485" archive="NCBI" id="84485"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Salmonella enterica</Name>
+        <Title>CT18_LT2_STv2</Title>
+        <Description>comparative DNA hyb of CT18 and LT2 gDNA to the Salmonella chip STv2
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE113</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-03-26T00:00:00Z" id="12655003" status="ePublished">
+          <Reference>12655003</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2003-03-07T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eGenome" sample_scope="eMultiisolate">
+            <Organism species="28901" taxID="28901">
+              <OrganismName>Salmonella enterica</OrganismName>
+              <Supergroup>eBacteria</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eVariation"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Variation</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052549" submitted="2002-12-13">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Vaccine Research Institute of San Diego</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84485" archive="NCBI" id="84485"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA12302" archive="NCBI" id="12302"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84487" archive="NCBI" id="84487"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Salmonella enterica</Name>
+        <Title>CT18_log_overnight_1</Title>
+        <Description>comparative hybridization of gDNA from logarithmic and stationary CT18 cultures on STv2
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE114</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-03-26T00:00:00Z" id="12655003" status="ePublished">
+          <Reference>12655003</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2003-03-07T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eGenome" sample_scope="eMultiisolate">
+            <Organism species="28901" taxID="28901">
+              <OrganismName>Salmonella enterica</OrganismName>
+              <Supergroup>eBacteria</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eVariation"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Variation</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052550" submitted="2002-12-13">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Vaccine Research Institute of San Diego</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84487" archive="NCBI" id="84487"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA12302" archive="NCBI" id="12302"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84489" archive="NCBI" id="84489"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Salmonella enterica</Name>
+        <Title>LT2_log_overnight_1</Title>
+        <Description>comparative hybridization of Typhimurium LT2 gDNA from logarithmic and stationary cultures on STv2
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE115</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-03-26T00:00:00Z" id="12655003" status="ePublished">
+          <Reference>12655003</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2003-03-07T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eGenome" sample_scope="eMultiisolate">
+            <Organism species="28901" taxID="28901">
+              <OrganismName>Salmonella enterica</OrganismName>
+              <Supergroup>eBacteria</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eVariation"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Variation</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052551" submitted="2002-12-13">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Vaccine Research Institute of San Diego</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84489" archive="NCBI" id="84489"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA12302" archive="NCBI" id="12302"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84491" archive="NCBI" id="84491"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Salmonella enterica subsp. enterica serovar Typhi</Name>
+        <Title>TY2_hydrogen_peroxide_2mM_RNA</Title>
+        <Description>Gene expression in Salmonella enterica sv Typhi TY2 after exposure to 2mM hydrogen peroxide
+Keywords: time-course</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE116</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-03-26T00:00:00Z" id="12655003" status="ePublished">
+          <Reference>12655003</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2003-03-08T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="28901" taxID="90370">
+              <OrganismName>Salmonella enterica subsp. enterica serovar Typhi</OrganismName>
+              <Supergroup>eBacteria</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052555" submitted="2002-12-14">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Vaccine Research Institute of San Diego</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84491" archive="NCBI" id="84491"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA12302" archive="NCBI" id="12302"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84493" archive="NCBI" id="84493"/>
+        <CenterID center="GEO" id="0">GSE117</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>P7 wildtype</Title>
+        <Description>Mice used were in a mixed background between 129/SvEv and C57BL/6. They were wildtype littermates of Rp1-/- mice used in parallel experiments. Triplicates of RNA samples from Rp1+/+ neural retinas for hybridization were collected at P7. Each RNA sample included a pool of neural retinas from 3-4 mice. Retinas were all collected at 1-2 pm of the day.
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE117</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2004-04-15T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2016-06-24" submission_id="SUB1649059" submitted="2002-12-17">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Jian Zuo's Lab, Department of Developmental Neurobiology, St. Jude Children's Research Hospital</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84493" archive="NCBI" id="84493"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84495" archive="NCBI" id="84495"/>
+        <CenterID center="GEO" id="0">GSE118</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>P10 wildtype</Title>
+        <Description>Mice used were in a mixed background between 129/SvEv and C57BL/6. They were wildtype littermates of Rp1-/- mice used in parallel experiments. Triplicates of RNA samples from Rp1+/+ neural retinas for hybridization were collected at P10. Each RNA sample included a pool of neural retinas from 3-4 mice. Retinas were all collected at 1-2 pm of the day.
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE118</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2004-04-15T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2016-06-24" submission_id="SUB1649060" submitted="2002-12-17">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Jian Zuo's Lab, Department of Developmental Neurobiology, St. Jude Children's Research Hospital</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84495" archive="NCBI" id="84495"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84497" archive="NCBI" id="84497"/>
+        <CenterID center="GEO" id="0">GSE119</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>P14 wildtype</Title>
+        <Description>Mice used were in a mixed background between 129/SvEv and C57BL/6. They were wildtype littermates of Rp1-/- mice used in parallel experiments. Triplicates of RNA samples from Rp1+/+ neural retinas for hybridization were collected at P14. Each RNA sample included a pool of neural retinas from 3-4 mice. Retinas were all collected at 1-2 pm of the day.
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE119</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2004-04-15T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2016-06-24" submission_id="SUB1648606" submitted="2002-12-17">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Jian Zuo's Lab, Department of Developmental Neurobiology, St. Jude Children's Research Hospital</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84497" archive="NCBI" id="84497"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84499" archive="NCBI" id="84499"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>Group1</Title>
+        <Description>Replicate group 1 for GSE11.  All samples were processed in parallel to minimize any variation introduced during target preparation.
+Keywords: parallel sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE12</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2001-11-21T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052449" submitted="2001-11-19">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>JDRF/WT Diabetes and Inflammation Laboratory, Medical genetics, Cambridge Institute for Medical Research</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84499" archive="NCBI" id="84499"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84501" archive="NCBI" id="84501"/>
+        <CenterID center="GEO" id="0">GSE120</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>P18 wildtype</Title>
+        <Description>Mice used were in a mixed background between 129/SvEv and C57BL/6. They were wildtype littermates of Rp1-/- mice used in parallel experiments. Triplicates of RNA samples from Rp1+/+ neural retinas for hybridization were collected at P18. Each RNA sample included a pool of neural retinas from 3-4 mice. Retinas were all collected at 1-2 pm of the day.
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE120</ID>
+          </dbXREF>
+        </ExternalLink>
+        <ProjectReleaseDate>2004-04-15T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2016-06-24" submission_id="SUB1648607" submitted="2002-12-17">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Jian Zuo's Lab, Department of Developmental Neurobiology, St. Jude Children's Research Hospital</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84501" archive="NCBI" id="84501"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package></PackageSet>

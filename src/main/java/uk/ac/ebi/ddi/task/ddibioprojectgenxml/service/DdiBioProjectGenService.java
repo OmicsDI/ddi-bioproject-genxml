@@ -54,8 +54,8 @@ public class DdiBioProjectGenService {
     }
 
 
-    public List<Entry> getDatasets(List<String> ids, String databaseName) throws Exception {
-        List<BioprojectDataset> datasets = bioProjectService.getDatasets(ids, databaseName);
+    public List<Entry> getDatasets(File inputFile, String databaseName) throws Exception {
+        List<BioprojectDataset> datasets = bioProjectService.getDatasets(inputFile, databaseName);
         List<Entry> entries = new ArrayList<>();
         for (BioprojectDataset dataset : datasets) {
             if (dataset.getIdentifier() != null) {

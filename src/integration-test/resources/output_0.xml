@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PackageSet><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84463" archive="NCBI" id="84463"/>
+        <CenterID center="GEO" id="0">GSE1</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Homo sapiens</Name>
+        <Title>NHGRI_Melanoma_class</Title>
+        <Description>This series represents a group of cutaneous malignant melanomas and unrelated controls which were clustered based on correlation coefficients calculated through a comparison of gene expression
+profiles.
+Keywords: other</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE1</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2000-08-22T00:00:00Z" id="10952317" status="ePublished">
+          <Reference>10952317</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2001-01-22T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="9606" taxID="9606">
+              <OrganismName>Homo sapiens</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2016-06-27" submission_id="SUB1651764" submitted="2001-01-22">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Cancer Genetics Branch, NHGRI, NIH</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84463" archive="NCBI" id="84463"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9558" archive="NCBI" id="9558"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84465" archive="NCBI" id="84465"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Homo sapiens</Name>
+        <Title>eye-SAGE</Title>
+        <Description>Human retinal and RPE SAGE libraries.
+Profile of the genes expressed in the human peripheral retina, macula, and retinal pigment epithelium determined through serial analysis of gene expression (SAGE).
+Keywords: other</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE10</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2002-01-05T00:00:00Z" id="11756676" status="ePublished">
+          <Reference>11756676</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2001-10-03T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="9606" taxID="9606">
+              <OrganismName>Homo sapiens</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eSequencing"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052447" submitted="2001-10-03">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Ocular Molecular Genetics Laboratory, Massachusetts Eye and Ear</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84465" archive="NCBI" id="84465"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9558" archive="NCBI" id="9558"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84467" archive="NCBI" id="84467"/>
+        <CenterID center="GEO" id="0">GSE100</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Saccharomyces cerevisiae</Name>
+        <Title>zzMex67 co-IPed RNA vs. Total RNA  (zzMex67IP_v_TotalRNA)</Title>
+        <Description>Comparison of cDNA from RNA IPed with zzMex67 to that from total RNA; resulting analysis gives Mex67 binding level relative to total abundance for each mRNA
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE100</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-01-14T00:00:00Z" id="12524544" status="ePublished">
+          <Reference>12524544</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-11-25T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="4932" taxID="4932">
+              <OrganismName>Saccharomyces cerevisiae</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2014-09-24" submission_id="SUB693551" submitted="2002-11-25">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Pamela A. Silver, Harvard Medical School and Dana-Farber Cancer Institute</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84467" archive="NCBI" id="84467"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9518" archive="NCBI" id="9518"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84469" archive="NCBI" id="84469"/>
+        <CenterID center="GEO" id="0">GSE101</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Saccharomyces cerevisiae</Name>
+        <Title>zzYra1 co-IPed RNA vs. Total RNA  (zzYra1IP_v_TotalRNA)</Title>
+        <Description>Comparison of cDNA from RNA IPed with zzYra1 to that from total RNA; resulting analysis gives Yra1 binding level relative to total abundance for each mRNA
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE101</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-01-14T00:00:00Z" id="12524544" status="ePublished">
+          <Reference>12524544</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-11-25T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="4932" taxID="4932">
+              <OrganismName>Saccharomyces cerevisiae</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2014-09-24" submission_id="SUB693560" submitted="2002-11-25">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Pamela A. Silver, Harvard Medical School and Dana-Farber Cancer Institute</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84469" archive="NCBI" id="84469"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9518" archive="NCBI" id="9518"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84471" archive="NCBI" id="84471"/>
+        <CenterID center="GEO" id="0">GSE102</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Saccharomyces cerevisiae</Name>
+        <Title>zzYra1 co-IPed RNA vs. zzMex67 co-IPed RNA  (zzYra1IP_v_zzMex67IP)</Title>
+        <Description>Comparison of cDNA from RNA co-IPed with zzYra1
+to cDNA from RNA co-IPed with zzMex67
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE102</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-01-14T00:00:00Z" id="12524544" status="ePublished">
+          <Reference>12524544</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-11-25T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="4932" taxID="4932">
+              <OrganismName>Saccharomyces cerevisiae</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2014-09-24" submission_id="SUB693568" submitted="2002-11-25">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Pamela A. Silver, Harvard Medical School and Dana-Farber Cancer Institute</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84471" archive="NCBI" id="84471"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9518" archive="NCBI" id="9518"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84473" archive="NCBI" id="84473"/>
+        <CenterID center="GEO" id="0">GSE103</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Saccharomyces cerevisiae</Name>
+        <Title>total RNA from mex67-6 at 37C vs. Mex67 WT at 37C (mex67-5TS_v_Mex67WT)</Title>
+        <Description>Comparison of cDNA from RNA of mex67-5 temperature-sensitive mutant to RNA from Mex67 wildtype strain both at the non-permissive temperature of 37C
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE103</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-01-14T00:00:00Z" id="12524544" status="ePublished">
+          <Reference>12524544</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-11-25T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="4932" taxID="4932">
+              <OrganismName>Saccharomyces cerevisiae</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2014-09-24" submission_id="SUB693576" submitted="2002-11-25">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Pamela A. Silver, Harvard Medical School and Dana-Farber Cancer Institute</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84473" archive="NCBI" id="84473"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9518" archive="NCBI" id="9518"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84475" archive="NCBI" id="84475"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Saccharomyces cerevisiae</Name>
+        <Title>total RNA from yra1-1 at 37C vs. Yra1 WT at 37C (yra1-1TS_v_Yra1WT)</Title>
+        <Description>Comparison of cDNA from RNA of yra1-1 temperature-sensitive mutant to RNA from Yra1 wildtype strain both at the non-permissive temperature of 37C
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE104</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2003-01-14T00:00:00Z" id="12524544" status="ePublished">
+          <Reference>12524544</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-11-25T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="4932" taxID="4932">
+              <OrganismName>Saccharomyces cerevisiae</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2013-07-26" submission_id="SUB303551" submitted="2002-11-25">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Pamela A. Silver, Harvard Medical School and Dana-Farber Cancer Institute</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84475" archive="NCBI" id="84475"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9518" archive="NCBI" id="9518"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84477" archive="NCBI" id="84477"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Homo sapiens</Name>
+        <Title>Lipopolysaccharide-stimulated neutrophils</Title>
+        <Description>Neutrophil gene transcription following lipopolysaccharide exposure.
+Microarray analysis of lipopolysaccharide-treated human neutrophils.
+Neutrophils respond to infection by degranulation, release of reactive oxygen intermediates, and secretion of chemokines and cytokines; however, activation of neutrophil transcriptional machinery has been little appreciated. Recent findings suggest that gene expression may represent an additional neutrophil function after exposure to lipopolysaccharide (LPS). We performed microarray gene expression analysis of 4,608 mostly nonredundant genes on LPS-stimulated human neutrophils. Analysis of three donors indicated some variability but also a high degree of reproducibility in gene expression. Twenty-eight verifiable, distinct genes were induced by 4 h of LPS treatment, and 13 genes were repressed. Genes other than cytokines and chemokines are regulated; interestingly, genes involved in cell growth regulation and survival, transcriptional regulation, and interferon response are among those induced, whereas genes involved in cytoskeletal regulation are predominantly repressed. In addition, we identified monocyte chemoattractant protein-1 as a novel LPS-regulated chemokine in neutrophils. Included in these lists are five clones with no defined function. These data suggest molecular mechanisms by which neutrophils respond to infection and indicate that the transcriptional potential of neutrophils is greater than previously thought.
+Keywords: repeat sample</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE105</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2002-12-24T00:00:00Z" id="12495940" status="ePublished">
+          <Reference>12495940</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2003-03-10T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Medical>Yes</Medical>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="9606" taxID="9606">
+              <OrganismName>Homo sapiens</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052542" submitted="2002-12-09">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Worthen, Department of Medicine, National Jewish Medical and Research Center</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84477" archive="NCBI" id="84477"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9558" archive="NCBI" id="9558"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84479" archive="NCBI" id="84479"/>
+        <CenterID center="GEO" id="0">GSE11</CenterID>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Mus musculus</Name>
+        <Title>NOD model of  type 1 diabetes</Title>
+        <Description>We used high density oligonucleotide arrays to measure the relative expression levels of &gt;39,000 genes and ESTs in the NOD mouse (a murine model of T1D and other autoimmune conditions), four NOD-derived diabetes resistant congenic strains and two nondiabetic control strains. Owing to the importance of T cells in the development of T1D we decided to target two organs, the spleen and thymus.  We profiled gene expression in thymi from four week old female mice and spleens from three month old female mice.  For each of the 14 strain-tissue combinations (7 strains x 2 tissues) we performed two independent replicate experiments, making the total number of hybridizations performed 28.  In each case, an RNA population from a pool of two or three organs was generated to minimize the chances of within strain variation masking genuine variation between the strains.  To minimize any variation introduced during target preparation, all samples within a given replicate group were processed in parallel.  Three samples from group two (spleen: B10.H2g7_S2 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm594 (GSM594); thymus: B10.H2g7_T2 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm608 (GSM608), B10.H2g7 Idd3_T2 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm609 (GSM609)) and one from group one (spleen B10.H2g7_S1 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm587 (GSM587) failed a preliminary quality control check.  Consequently, the steps involved in preparing labelled cRNA from the initial starting material had to be repeated for these four samples at a later date.  A subsequent comparison of the variation seen between samples within the same replicate group (samples processed in parallel) versus samples in distinct replicate groups (samples processed at different times) revealed that the variation between the two groups (i.e. owing to independent sample preparation) was higher than the small amount of variation between the closely matched strains.  Ignoring the variability introduced during sample preparation was therefore likely to result in spurious changes being detected and genuine strain-specific differences in gene expression being masked.  Consequently, we decided to exclude the four samples that had had to be prepared independently owing to failing initial quality control.
+Keywords = NOD, diabetes, congenic
+Keywords: other</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE11</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2002-02-06T00:00:00Z" id="11827943" status="ePublished">
+          <Reference>11827943</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2001-11-21T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <ModelOrganism>Yes</ModelOrganism>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="10090" taxID="10090">
+              <OrganismName>Mus musculus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eArray"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB3628530" submitted="2001-11-19">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>JDRF/WT Diabetes and Inflammation Laboratory, Medical genetics, Cambridge Institute for Medical Research</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84479" archive="NCBI" id="84479"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA9559" archive="NCBI" id="9559"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package><Package>
+  <Project>
+    <Project>
+      <ProjectID>
+        <ArchiveID accession="PRJNA84481" archive="NCBI" id="84481"/>
+      </ProjectID>
+      <ProjectDescr>
+        <Name>Bos taurus</Name>
+        <Title>Bovine Glomerular and Aortic Endothelial Cells</Title>
+        <Description>SAGE libraries were prepared from mRNA of cultured bovine glomerular and aortic endothelial cells. Cells both cell lines were positive for acetylated LDL uptake and vWF expression, and were proven to be free of non-endothelial cells.  Cultures were studied at passage 9-10. The cells were confluent, cultured in parallel, under identical conditions. Cells were plated on gelatin coated cell culture plastic in RPMI 1640 medium containing 10% FBS and streptomycin/penicillin. The last medium change was 48 hours prior to mRNA harvest.
+Keywords = endothelial, glomerular, kidney, aorta,
+Keywords: other</Description>
+        <ExternalLink label="">
+          <dbXREF db="GEO">
+            <ID>GSE110</ID>
+          </dbXREF>
+        </ExternalLink>
+        <Publication date="2005-01-20T00:00:00Z" id="15657302" status="ePublished">
+          <Reference>15657302</Reference>
+          <DbType>ePubmed</DbType>
+        </Publication>
+        <ProjectReleaseDate>2002-12-10T00:00:00Z</ProjectReleaseDate>
+        <Relevance>
+          <Agricultural>Yes</Agricultural>
+        </Relevance>
+      </ProjectDescr>
+      <ProjectType>
+        <ProjectTypeSubmission>
+          <Target capture="eWhole" material="eTranscriptome" sample_scope="eMultiisolate">
+            <Organism species="9913" taxID="9913">
+              <OrganismName>Bos taurus</OrganismName>
+              <Supergroup>eEukaryotes</Supergroup>
+            </Organism>
+          </Target>
+          <Method method_type="eSequencing"/>
+          <Objectives>
+            <Data data_type="eExpression"/>
+          </Objectives>
+          <ProjectDataTypeSet>
+            <DataType>Transcriptome or Gene expression</DataType>
+          </ProjectDataTypeSet>
+        </ProjectTypeSubmission>
+      </ProjectType>
+    </Project>
+    <Submission last_update="2012-02-23" submission_id="SUB052547" submitted="2002-12-10">
+      <Description>
+        <Organization role="owner" type="institute">
+          <Name>Endothelial Cell Biology, Medicine, Albert Einstein College of Medicine</Name>
+        </Organization>
+        <Access>public</Access>
+        <!--Submitter, contact information and comments have been removed-->
+      </Description>
+    </Submission>
+    <ProjectLinks>
+      <Link>
+        <ProjectIDRef accession="PRJNA84481" archive="NCBI" id="84481"/>
+        <Hierarchical type="TopSingle">
+          <MemberID accession="PRJNA10708" archive="NCBI" id="10708"/>
+        </Hierarchical>
+      </Link>
+    </ProjectLinks>
+  </Project>
+</Package></PackageSet>

@@ -7,22 +7,20 @@ public class DdiBioProjectProperties {
 
     private String outputFolder;
 
+    private String inputFolder;
+
     private String database;
 
     private String prefix = "BioProject-";
 
-    private String apiKey = "";
-
-    private int batchSize = 30;
-
     private int entriesPerFile = 10;
 
-    public String getApiKey() {
-        return apiKey;
+    public String getInputFolder() {
+        return inputFolder;
     }
 
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
+    public void setInputFolder(String inputFolder) {
+        this.inputFolder = inputFolder;
     }
 
     public int getEntriesPerFile() {
@@ -39,14 +37,6 @@ public class DdiBioProjectProperties {
 
     public void setDatabase(String database) {
         this.database = database;
-    }
-
-    public int getBatchSize() {
-        return batchSize;
-    }
-
-    public void setBatchSize(int batchSize) {
-        this.batchSize = batchSize;
     }
 
     public String getPrefix() {

@@ -1,7 +1,5 @@
 package uk.ac.ebi.ddi.task.ddibioprojectgenxml;
 
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +15,7 @@ import uk.ac.ebi.ddi.xml.validator.parser.marshaller.OmicsDataMarshaller;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Database;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Entry;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -51,21 +50,22 @@ public class DdiBioprojectGenxmlApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         fileSystem.cleanDirectory(taskProperties.getOutputFolder());
         AtomicInteger fileCount = new AtomicInteger(0);
-        List<String> ids = ddiBioProjectGenService.getBioProjectIds();
-        LOGGER.info("Total ids: {}", ids.size());
-        List<List<String>> batches = Lists.newArrayList(Iterables.partition(ids, taskProperties.getBatchSize()));
-        int processed = 0;
-        for (List<String> batch : batches) {
+
+        List<String> datasetFiles = fileSystem.listFilesFromFolder(taskProperties.getInputFolder());
+
+        for (String file : datasetFiles) {
             try {
-                LOGGER.info("Processing {}/{}", processed++, batches.size());
-                entries.addAll(ddiBioProjectGenService.getDatasets(batch, taskProperties.getDatabase()));
+                File inputFile = fileSystem.getFile(file);
+                entries.addAll(ddiBioProjectGenService.getDatasets(inputFile, taskProperties.getDatabase()));
+                inputFile.delete();
             } catch (Exception e) {
-                LOGGER.error("Exception occurred when trying to get datasets for ids: {}, ", batch, e);
+                LOGGER.error("Exception occurred when trying to get datasets for file: {}, ", file, e);
             }
             if (entries.size() > 0 && entries.size() > taskProperties.getEntriesPerFile()) {
                 writeDatasetsToFile(entries, taskProperties.getEntriesPerFile(), fileCount);
             }
         }
+
         writeDatasetsToFile(entries, entries.size(), fileCount.getAndIncrement());
     }
 
