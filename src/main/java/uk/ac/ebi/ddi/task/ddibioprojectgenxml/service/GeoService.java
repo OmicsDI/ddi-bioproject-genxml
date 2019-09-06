@@ -51,7 +51,7 @@ public class GeoService {
                 .queryParam("acc", id)
                 .queryParam("targ", "self")
                 .queryParam("form", "text")
-                .queryParam("view", "full");
+                .queryParam("view", "quick");
         FileDownloadUtils.httpDownloadFile(builder.toUriString(), softFile);
         fileSystem.copyFile(softFile, filePath);
         return softFile;
