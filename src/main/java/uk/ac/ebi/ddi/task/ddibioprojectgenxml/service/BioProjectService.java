@@ -11,7 +11,6 @@ import org.xml.sax.InputSource;
 import uk.ac.ebi.ddi.api.readers.utils.Constants;
 import uk.ac.ebi.ddi.api.readers.utils.XMLUtils;
 import uk.ac.ebi.ddi.ddidomaindb.database.DB;
-import uk.ac.ebi.ddi.task.ddibioprojectgenxml.configuration.DdiBioProjectProperties;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.BioprojectDataset;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.PlatformFile;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.model.SampleFile;
@@ -41,9 +40,6 @@ public class BioProjectService {
 
     @Autowired
     private GeoService geoService;
-
-    @Autowired
-    private DdiBioProjectProperties properties;
 
     private void addGeoAdditionInformations(BioprojectDataset dataset) throws Exception {
         SeriesFile series = geoService.getSeries(dataset.getIdentifier());
@@ -101,7 +97,6 @@ public class BioProjectService {
                 dataset.addCellType(celltype);
                 dataset.setDataProtocol(sample.getDataProtocol());
                 dataset.setSampleProtocol(sample.getSampleProtocol());
-                LOGGER.info("Downloaded 1 of {} sampleIds celltype: {}", series.getSampleIds().size(), celltype);
             } catch (Exception e) {
                 LOGGER.error("Unable to download sample file for {}, ", sampleId, e);
             }
