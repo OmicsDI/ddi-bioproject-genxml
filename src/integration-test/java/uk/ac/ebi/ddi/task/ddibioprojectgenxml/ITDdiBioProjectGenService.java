@@ -41,6 +41,7 @@ public class ITDdiBioProjectGenService {
     public void setUp() throws Exception {
         Files.createDirectories(new File(ddiBioProps.getOutputFolder()).toPath());
         Files.createDirectories(new File(ddiBioProps.getInputFolder()).toPath());
+        Files.createDirectories(new File(ddiBioProps.getIntermediateFolder()).toPath());
         File importFile = new File(getClass().getClassLoader().getResource("output_0.xml").getFile());
         fileSystem.copyFile(importFile, ddiBioProps.getInputFolder() + "/output_0.xml");
 

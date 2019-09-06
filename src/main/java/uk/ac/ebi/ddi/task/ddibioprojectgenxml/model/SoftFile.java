@@ -41,7 +41,6 @@ public class SoftFile {
             }
         } finally {
             LineIterator.closeQuietly(it);
-            file.delete();
         }
     }
 
