@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import uk.ac.ebi.ddi.api.readers.utils.Constants;
 import uk.ac.ebi.ddi.ddifileservice.services.IFileSystem;
+import uk.ac.ebi.ddi.ddifileservice.type.CloseableFile;
 import uk.ac.ebi.ddi.ddifileservice.type.ConvertibleOutputStream;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.configuration.DdiBioProjectProperties;
 import uk.ac.ebi.ddi.task.ddibioprojectgenxml.service.DdiBioProjectGenService;
@@ -15,7 +16,6 @@ import uk.ac.ebi.ddi.xml.validator.parser.marshaller.OmicsDataMarshaller;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Database;
 import uk.ac.ebi.ddi.xml.validator.parser.model.Entry;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -54,10 +54,8 @@ public class DdiBioprojectGenxmlApplication implements CommandLineRunner {
         List<String> datasetFiles = fileSystem.listFilesFromFolder(taskProperties.getInputFolder());
 
         for (String file : datasetFiles) {
-            try {
-                File inputFile = fileSystem.getFile(file);
+            try (CloseableFile inputFile = fileSystem.getFile(file)) {
                 entries.addAll(ddiBioProjectGenService.getDatasets(inputFile, taskProperties.getDatabase()));
-                inputFile.delete();
             } catch (Exception e) {
                 LOGGER.error("Exception occurred when trying to get datasets for file: {}, ", file, e);
             }
